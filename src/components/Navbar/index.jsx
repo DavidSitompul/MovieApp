@@ -1,5 +1,6 @@
 import React from "react"
 import Link from "next/link"
+import InputSearch from "./InputSearch"
 
 const NavigaitonBar = () => {
   return (
@@ -8,7 +9,7 @@ const NavigaitonBar = () => {
         <Link href="/" className="font-bold text-2xl text-white">
           ANIME LK 23
         </Link>
-        <input type="text" placeholder="Cari Anime..." alt="..." className="px-4 h-10 outline-none rounded-md" />
+        <InputSearch />
         <h1>Genre</h1>
         <h1>Populer</h1>
         <h1>Tahun</h1>
