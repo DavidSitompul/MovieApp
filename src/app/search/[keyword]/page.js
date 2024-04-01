@@ -1,4 +1,4 @@
-import { getAnime } from "@/app/services/api-lib"
+import { getAnime } from "@/services/api-lib"
 import SearchAnime from "@/components/SearchAnime"
 import React from "react"
 

@@ -5,7 +5,7 @@ import PopulerAnime from "@/components/AnimesList/PopulerAnime"
 import HeaderMenu from "@/components/Utilities/HeaderMenu"
 import Pagination from "@/components/Utilities/Pagination"
 import React, { useEffect, useState } from "react"
-import { getAnime } from "../services/api-lib" //api service for getting anime
+import { getAnime } from "../../services/api-lib" //api service for getting anime
 
 const Page = () => {
   const [page, setPage] = useState(1)

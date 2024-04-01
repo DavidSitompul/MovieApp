@@ -1,6 +1,6 @@
-import { getAnime } from "@/app/services/api-lib"
+import { getAnime } from "@/services/api-lib"
 import VideoPlayer from "@/components/Utilities/videoPlayer"
-import { Button, Card, CardBody, CardFooter, Heading, Image, Stack, Text } from "@chakra-ui/react"
+import { Box, Button, Card, CardBody, CardFooter, Heading, Image, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
 const Page = async ({ params: { id } }) => {
@@ -20,18 +20,17 @@ const Page = async ({ params: { id } }) => {
               {detailsAnime.data.title} {detailsAnime.data.year}
             </Heading>
             <Text py="2">{detailsAnime.data.synopsis}</Text>
+            <Box display="flex" gap={5}>
+              <Text py="2">{detailsAnime.data.score}</Text>
+              <Text py="2">{detailsAnime.data.episodes}</Text>
+              <Text py="2">{detailsAnime.data.duration}</Text>
+            </Box>
           </CardBody>
-
           <CardFooter>
-            <Button variant="solid" colorScheme="blue">
-              <Text py="2">Trailer</Text>
-            </Button>
+            <VideoPlayer youtubeId={detailsAnime.data.trailer.youtube_id} />
           </CardFooter>
         </Stack>
       </Card>
-      <div>
-        <VideoPlayer youtubeId={detailsAnime.data.trailer.youtube_id} />
-      </div>
     </>
   )
 }
