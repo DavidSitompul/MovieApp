@@ -11,7 +11,7 @@ const NavigaitonBar = () => {
         </Link>
         <InputSearch />
         <h1>Genre</h1>
-        <h1>Populer</h1>
+        <Link href="/populer">Populer</Link>
         <h1>Tahun</h1>
       </div>
     </header>
