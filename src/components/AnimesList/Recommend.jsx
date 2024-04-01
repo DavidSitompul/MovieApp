@@ -8,7 +8,7 @@ const ListRecommend = ({ api }) => {
         const [datas] = data.entry //destructering data image and title from data.entry
         // console.log(data)
         return (
-          <Link href={`/${datas.mal_id}`} className="" key={datas.mal_id}>
+          <Link href={`/anime/${datas.mal_id}`} className="" key={datas.mal_id}>
             <Card boxShadow="2xl" className="h-[420px]">
               <CardBody>
                 <Image src={datas.images.webp.image_url} alt="..." borderRadius="sm" className="h-[200px] w-full hover:scale-[102%] ease-in-out transition-all duration-300" />
