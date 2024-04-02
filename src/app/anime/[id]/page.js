@@ -5,9 +5,6 @@ import React from "react"
 
 const Page = async ({ params: { id } }) => {
   const detailsAnime = await getAnime(`anime/${id}`)
-
-  console.log(detailsAnime)
-
   return (
     <>
       <div>Detail Rekomen Anime {id}</div>
@@ -17,13 +14,14 @@ const Page = async ({ params: { id } }) => {
         <Stack>
           <CardBody>
             <Heading size="md">
-              {detailsAnime.data.title} {detailsAnime.data.year}
+              {detailsAnime.data.title}
+              <Text py="2">Year - {detailsAnime.data.year}</Text>
             </Heading>
             <Text py="2">{detailsAnime.data.synopsis}</Text>
             <Box display="flex" gap={5}>
-              <Text py="2">{detailsAnime.data.score}</Text>
-              <Text py="2">{detailsAnime.data.episodes}</Text>
-              <Text py="2">{detailsAnime.data.duration}</Text>
+              <Text py="2">Rating - {detailsAnime.data.score}</Text>
+              <Text py="2">Eps - {detailsAnime.data.episodes}</Text>
+              <Text py="2">Duration - {detailsAnime.data.duration}s</Text>
             </Box>
           </CardBody>
           <CardFooter>
