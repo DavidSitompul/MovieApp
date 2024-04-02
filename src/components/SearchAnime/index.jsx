@@ -8,7 +8,7 @@ const SearchAnime = ({ api }) => {
         // const [datas] = data.entry //destructering data image and title from data.entry
         // console.log(data)
         return (
-          <Link href={`/${data.mal_id}`} className="" key={data.mal_id}>
+          <Link href={`/anime/${data.mal_id}`} className="" key={data.mal_id}>
             <Card boxShadow="2xl" className="h-[420px]">
               <CardBody>
                 <Image src={data.images.webp.image_url} alt="..." borderRadius="sm" className="h-[200px] w-full hover:scale-[102%] ease-in-out transition-all duration-300" />
