@@ -7,7 +7,7 @@ import { FaCirclePlay } from "react-icons/fa6"
 import YouTube from "react-youtube"
 
 const VideoPlayer = ({ youtubeId }) => {
-  const [isopen, setIsOpen] = useState(true)
+  const [isopen, setIsOpen] = useState(false)
   const handleVideoPlayer = () => {
     setIsOpen((prevstate) => !prevstate)
   }
