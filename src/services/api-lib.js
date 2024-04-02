@@ -4,16 +4,11 @@ export const getAnime = async (resource, query) => {
   return anime
 }
 
-export const reproduce = (data, random, gap) => {
-  // const random = Math.random()
-  const first = Math.max(0, random - gap + 1)
-  const last = first + gap
+export const reproduce = (data, gap) => {
+  const first = gap
+  const last = first <= 4 ? (gap = 10) : gap + 10
   const response = {
     data: data.slice(first, last),
   }
-  console.log(random)
-  console.log(first)
-  console.log(last)
-
   return response
 }
