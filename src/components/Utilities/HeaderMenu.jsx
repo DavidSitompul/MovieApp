@@ -1,7 +1,7 @@
 import React from "react"
 
-const Page = () => {
-  return <div>HeaderMENU</div>
+const Page = ({ page }) => {
+  return <div>Populer Anime #{page}</div>
 }
 
 export default Page

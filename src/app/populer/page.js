@@ -25,8 +25,7 @@ const Page = () => {
   return (
     <>
       <section>
-        <HeaderAnime />
-        <HeaderMenu />
+        <HeaderMenu page={page} />
         <PopulerAnime api={populerAnime} />
         <Pagination page={page} lastPage={populerAnime.pagination?.last_visible_page} setPage={setPage} />
       </section>
