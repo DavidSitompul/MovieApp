@@ -47,7 +47,7 @@ const CardCarousel = () => {
   return (
     <>
       <Swiper
-        className="bg-black shadow-2xl md:drop-shadow-xl"
+        className="bg-black md:drop-shadow-xl duration-300 transition-all  w-[95%] my-10 rounded-xl"
         // install Swiper modules
         modules={[Pagination, Autoplay, Navigation]}
         spaceBetween={10}
@@ -67,16 +67,23 @@ const CardCarousel = () => {
         {Banner.map((b) => {
           return (
             <SwiperSlide key={b.id}>
-              <div className="h-[360px] md:h-screen w-full relative">
+              <div className="h-[550px] md:h-screen w-full relative">
                 <Image alt={"img"} src={b.url} fill priority="true" />
-                <div className="bg-black h-[50%] w-full absolute bottom-0 blur-3xl opacity-60 "></div>
-                <div className="absolute bottom-0 mb-10 h-[30%] text-white">
-                  <div className=" h-full w-[80%] flex flex-col justify-between">
-                    <h1 className="font-medium text-[13px] drop-shadow-2xl">{b.title}</h1>
-                    <p className="text-sm line-clamp-3">{b.synopsis}</p>
-                    <Link href={`/anime/${b.id}`} className="bg-cyan-900 w-[20%] text-center p-2 rounded-sm hover:bg-opacity-90 lg:rounded-lg ">
-                      Selengkapnya
-                    </Link>
+                <div className="bg-black h-[70%] w-[200%] absolute -bottom-16 -left-32 blur-3xl opacity-70 "></div>
+                <div className="absolute bottom-0 h-[70%] md:h-[45%] text-white">
+                  <div className="relative h-full w-full px-5">
+                    <div className=" h-full w-[65%] flex flex-col gap-y-3 md:gap-y-5 ">
+                      <h1 className="font-bold text-[34px] drop-shadow-2xl line-clamp-2">{b.title}</h1>
+                      <div className="flex flex-col md:flex-row gap-5">
+                        <div className="bg-transparent border-2 text-sm font-light border-teal-300 rounded-lg h-[30px] md:h-[50px] lg:h-[30px] w-auto items-center flex p-2">{b.genres}</div>
+                        <div className="bg-transparent border-2 text-sm font-light border-teal-300 rounded-lg h-[30px] md:h-[50px] lg:h-[30px] w-auto items-center flex p-2">{b.rating}</div>
+                        <div className="bg-transparent border-2 text-sm font-light border-teal-300 rounded-lg h-[30px] md:h-[50px] lg:h-[30px] w-auto items-center flex p-2">{b.score}</div>
+                      </div>
+                      <p className="text-sm line-clamp-3">{b.synopsis}</p>
+                      <Link href={`/anime/${b.id}`} className="bg-cyan-900 w-[150px] md:w-[20%] text-center p-2 rounded-sm hover:bg-opacity-90 lg:rounded-lg ">
+                        See More
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -84,7 +91,6 @@ const CardCarousel = () => {
           )
         })}
       </Swiper>
-      <div className="bg-black h-[30px] w-full  blur-3xl opacity-60 drop-shadow-2xl"></div>
     </>
   )
 }
