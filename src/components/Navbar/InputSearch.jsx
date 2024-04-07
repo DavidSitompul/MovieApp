@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation"
 import React, { useRef } from "react"
 import { CiSearch } from "react-icons/ci"
+import { Input, useColorMode } from "@chakra-ui/react"
 
 const InputSearch = () => {
   const searchRef = useRef()
@@ -15,10 +16,11 @@ const InputSearch = () => {
       router.push(`/search/${keyword}`)
     }
   }
+  const { colorMode } = useColorMode()
 
   return (
     <div className="relative">
-      <input type="text" placeholder="Cari Anime..." alt="..." className="w-full px-4 h-10 outline-none rounded-md" ref={searchRef} onKeyDown={handleSearch} />
+      <Input variant="filled" focusBorderColor={`${colorMode === "light" ? "Black" : "white"}`} type="text" placeholder="Cari Anime..." alt="..." className="w-full px-4 h-10 rounded-md" ref={searchRef} onKeyDown={handleSearch} />
 
       <button className="absolute top-2 end-2" onClick={handleSearch}>
         <CiSearch size={24} />
