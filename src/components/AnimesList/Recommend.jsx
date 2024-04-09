@@ -7,22 +7,13 @@ import { reproduce } from "@/services/api-lib"
 import { GrFormPrevious, GrNext } from "react-icons/gr"
 
 const ListRecommend = ({ api }) => {
-  const scrollTop = () => {
-    scrollTo({
-      behavior: "instant",
-      top: 0,
-    })
-  }
-
   const [page, setPage] = useState(0)
 
   const handleNext = () => {
-    setPage((prevState) => prevState + 10)
-    scrollTop()
+    setPage((prevState) => prevState + 12)
   }
   const handlePrev = () => {
-    setPage((prevState) => prevState - 10)
-    scrollTop()
+    setPage((prevState) => prevState - 12)
   }
 
   const sliceData = api.data
@@ -30,13 +21,13 @@ const ListRecommend = ({ api }) => {
 
   return (
     <>
-      <div className="grid px-3 gap-5 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-10 lg:grid-cols-5">
+      <div className="grid px-5 md:pl-12 xl:pl-8 2xl:pl-14 gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
         {newSlice.data.map((data, index) => {
           const [datas] = data.entry //destructering data image and title from data.entry
           // console.log(data)
           return (
             <Link href={`/anime/${datas.mal_id}`} className="" key={`${datas.mal_id}_${index}`}>
-              <Card boxShadow="2xl" className="h-[320px]">
+              <Card boxShadow="2xl" className="h-[320px] w-[300] md:w-[180px]">
                 <CardBody>
                   <Image src={datas.images.webp.image_url} alt="..." borderRadius="sm" className="h-[200px] w-full hover:scale-[102%] ease-in-out transition-all duration-300" />
                   <Stack mt="3">
