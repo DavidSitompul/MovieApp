@@ -27,7 +27,7 @@ const CardCarousel = () => {
     {
       id: 51009,
       title: "JUJUTSU KAISEN (SEASON 2)",
-      url: "/images/JJk.webp",
+      url: "/images/JJK.webp",
       score: 8.89,
       rating: "R17+",
       genres: ["Action", "Fantasy"],
