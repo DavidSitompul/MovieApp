@@ -1,5 +1,6 @@
 import DetailsAnime from "@/components/AnimesList/DetailsAnime"
 import { getAnime } from "@/services/api-lib"
+import HeaderMenu from "@/components/Utilities/HeaderMenu"
 import React from "react"
 
 const Page = async ({ params: { id } }) => {
@@ -8,7 +9,7 @@ const Page = async ({ params: { id } }) => {
 
   return (
     <>
-      <h1>Detail for - {detailsAnime.data.title}</h1>
+      <HeaderMenu title={`Detail for - ${detailsAnime.data.title}`} />
       <DetailsAnime detailsAnime={detailsAnime} character={character} />
     </>
   )

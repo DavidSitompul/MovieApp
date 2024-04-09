@@ -1,6 +1,7 @@
 import { getAnime } from "@/services/api-lib"
 import SearchAnime from "@/components/SearchAnime"
 import React from "react"
+import HeaderAnime from "@/components/AnimesList/HeaderAnime"
 
 const Page = async ({ params }) => {
   // server component
@@ -11,7 +12,7 @@ const Page = async ({ params }) => {
   return (
     <>
       <section>
-        <h1>{decodekeyword}</h1>
+        <HeaderAnime title={`Search Result For ${decodekeyword.toUpperCase()} `} />
         <SearchAnime api={searchAnime} />
       </section>
     </>

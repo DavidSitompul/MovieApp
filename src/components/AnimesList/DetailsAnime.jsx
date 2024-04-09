@@ -4,6 +4,7 @@ import React from "react"
 import { Box, Card, CardBody, CardFooter, Heading, Image, Stack, Text, useColorMode } from "@chakra-ui/react"
 import { FaClock, FaList, FaStar } from "react-icons/fa6"
 import { PiTelevisionFill } from "react-icons/pi"
+import HeaderMenu from "@/components/Utilities/HeaderMenu"
 import VideoPlayer from "../Utilities/videoPlayer"
 
 const DetailsAnime = ({ detailsAnime, character }) => {
@@ -47,12 +48,13 @@ const DetailsAnime = ({ detailsAnime, character }) => {
         </Card>
       </section>
       <section>
-        <Box m={5} rounded="lg" boxShadow="xl" bg={colorMode === "light" ? "#EDF2F7" : ""}>
+        <Box m={5} rounded="lg" boxShadow="xl" bg={colorMode === "light" ? "#EDF2F7" : "#2D3748"}>
+          <HeaderMenu title="Main Characters & Voice Actors" />
           {character.data.map((a) => {
             if (a.role === "Main") {
               const [voice] = a.voice_actors
               return (
-                <div className="sm:flex py-5 px-3 space-y-6 sm:space-y-0 gap-6" key={a.character.mal_id}>
+                <div className="sm:flex py-5 px-5 space-y-6 sm:space-y-0 gap-6" key={a.character.mal_id}>
                   <div className="sm:w-[35%] flex gap-2 ">
                     <div className="h-20 w-20">
                       <Image objectFit="cover" rounded={5} boxSize="100%" src={a.character.images.webp.image_url} alt="..." />
