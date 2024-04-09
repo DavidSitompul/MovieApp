@@ -14,6 +14,7 @@ const InputSearch = () => {
     if (e.key === "Enter" || e.type === "click") {
       e.preventDefault()
       router.push(`/search/${keyword}`)
+      searchRef.current.value = ""
     }
   }
   const { colorMode } = useColorMode()

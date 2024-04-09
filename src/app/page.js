@@ -48,7 +48,7 @@ const Home = async () => {
           </section>
         </div>
         <div className="h-full md:w-[25%]">
-          <section className="mt-10 md:mt-0 pr-5">
+          <section className="mt-5 md:mt-0 pr-5">
             <HeaderAnime title="Sensational Anime" icon={<FaHotjar color="orange" />} />
             <HotAnime api={Sensational} />
           </section>
