@@ -47,11 +47,9 @@ const Home = async () => {
             <ListRecommend api={recommendAnime} />
           </section>
         </div>
-        <div className="h-full md:w-[25%]">
-          <section className="mt-5 md:mt-0 pr-5">
-            <HeaderAnime title="Sensational Anime" icon={<FaHotjar color="orange" />} />
-            <HotAnime api={Sensational} />
-          </section>
+        <div className="h-full mt-5 md:mt-0 pr-5 md:w-[25%]">
+          <HeaderAnime title="Sensational Anime" icon={<FaHotjar color="orange" />} />
+          <HotAnime api={Sensational} />
         </div>
       </div>
     </>
