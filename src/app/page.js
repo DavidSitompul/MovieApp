@@ -13,7 +13,6 @@ const Home = async () => {
   // server component
   const recommendAnime = await getAnime("recommendations/anime")
   const populerAnime = await getAnime("top/anime", `limit=8`)
-  const Sensational = await getAnime("seasons/now", `limit=15`)
 
   // cara menggunakan datanya yaitu  "recommendAnime.data"
   return (
@@ -49,7 +48,7 @@ const Home = async () => {
         </div>
         <div className="h-full mt-5 md:mt-0 pr-5 md:w-[25%]">
           <HeaderAnime title="Sensational Anime" icon={<FaHotjar color="orange" />} />
-          <HotAnime api={Sensational} />
+          <HotAnime />
         </div>
       </div>
     </>

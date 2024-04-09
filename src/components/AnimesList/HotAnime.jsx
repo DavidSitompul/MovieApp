@@ -2,12 +2,15 @@
 import React from "react"
 import Link from "next/link"
 import { Card, Text, CardBody, Stack, Heading, Image } from "@chakra-ui/react"
+import { getAnime } from "@/services/api-lib"
 
-const HotAnime = ({ api }) => {
+const HotAnime = async () => {
+  const Sensational = await getAnime("seasons/now", `limit=15`)
+  const dataSensational = Sensational.data
+
   return (
     <>
-      {api.data.map((coming, index) => {
-        console.log(coming)
+      {dataSensational.map((coming, index) => {
         return (
           <Link href={`/anime/${coming.mal_id}`} className="" key={`${coming.mal_id}_${index}`}>
             <Card size="sm" boxShadow="lg" className="w-full mt-5">
