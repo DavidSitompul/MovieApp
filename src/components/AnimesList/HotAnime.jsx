@@ -1,4 +1,5 @@
 "use client"
+
 import React from "react"
 import Link from "next/link"
 import { Card, Text, CardBody, Stack, Heading, Image } from "@chakra-ui/react"
@@ -6,7 +7,7 @@ import { Card, Text, CardBody, Stack, Heading, Image } from "@chakra-ui/react"
 const HotAnime = ({ api }) => {
   return (
     <>
-      {api.data?.map((coming, index) => {
+      {api.data.map((coming, index) => {
         return (
           <Link href={`/anime/${coming.mal_id}`} className="" key={`${coming.mal_id}_${index}`}>
             <Card size="sm" boxShadow="lg" className="w-full mt-5">
