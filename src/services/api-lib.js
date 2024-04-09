@@ -6,7 +6,7 @@ export const getAnime = async (resource, query) => {
 
 export const reproduce = (data, gap) => {
   const first = gap
-  const last = first <= 4 ? (gap = 10) : gap + 10
+  const last = first <= 4 ? (gap = 12) : gap + 12
   const response = {
     data: data.slice(first, last),
   }
