@@ -7,7 +7,6 @@ const Pagination = ({ page, lastPage, setPage }) => {
     scrollTo({
       behavior: "instant",
       top: 0,
-      
     })
   }
 

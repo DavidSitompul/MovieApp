@@ -36,7 +36,7 @@ const CardCarousel = () => {
     {
       id: 32281,
       title: "Kimi no Na wa",
-      url: "/images/Frieren.webp",
+      url: "/images/Kimi.webp",
       score: 8.84,
       rating: "PG-13 - Teens 13 or older",
       genres: "Award Winning",
@@ -55,13 +55,13 @@ const CardCarousel = () => {
         pagination={true}
         navigation={true}
         speed={2000}
-        // autoplay={{
-        //   delay: 2000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
         loop={true}
         effect={"coverflow"}
-        // grabCursor={true}
+        grabCursor={true}
         centeredSlides={true}
       >
         {Banner.map((b) => {
