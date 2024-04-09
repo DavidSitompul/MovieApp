@@ -24,7 +24,7 @@ const Home = async () => {
           <section>
             <HeaderAnime title="Most Populer" linkhref="/populer" linktitle="See All" icon={<FcStart />} />
             <div className="grid px-5 xl:pl-8 2xl:pl-14 gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
-              {populerAnime.data?.map((data) => {
+              {populerAnime.data.map((data) => {
                 return (
                   <Link href={`/anime/${data.mal_id}`} className="" key={data.mal_id}>
                     <Card boxShadow="2xl" className="h-[320px] w-[300] md:w-[180px]">
